@@ -6,234 +6,188 @@
 <title>Khizer Rehman — ML / AI Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #FAFAF8;
-  --ink: #141210;
-  --muted: #6B6760;
-  --accent: #B85C2A;
-  --accent-light: #F0E6DC;
-  --line: #E4E0D8;
-  --card: #FFFFFF;
-  --dark: #141210;
-  --dark2: #1E1C19;
-  --dark3: #252320;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF8;--ink:#141210;--muted:#6B6760;--accent:#B85C2A;
+  --accent-light:#F0E6DC;--line:#E4E0D8;--card:#FFFFFF;
 }
-html { scroll-behavior: smooth; }
-body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--ink); overflow-x: hidden; }
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--accent); }
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--accent)}
 
 /* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem 5vw;
-  background: rgba(250,250,248,0.94); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
-}
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; }
-.nav-logo span { color: var(--accent); }
-.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-.nav-links a { font-size: 0.78rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
-.nav-links a:hover { color: var(--accent); }
-.nav-cta { background: var(--ink) !important; color: var(--bg) !important; padding: 0.5rem 1.3rem !important; }
-.nav-cta:hover { background: var(--accent) !important; color: var(--bg) !important; }
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;background:rgba(250,250,248,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:0.78rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--ink)!important;color:var(--bg)!important;padding:0.5rem 1.3rem!important}
+.nav-cta:hover{background:var(--accent)!important;color:var(--bg)!important}
 
 /* HERO */
-.hero {
-  min-height: 100vh;
-  display: grid; grid-template-columns: 55% 45%;
-  align-items: stretch; padding-top: 72px;
-}
-.hero-left { padding: 5rem 4rem 5rem 5vw; display: flex; flex-direction: column; justify-content: center; }
-.hero-right {
-  background: linear-gradient(160deg, #1E1C19 0%, #141210 100%);
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 5rem 3.5rem; position: relative; overflow: hidden;
-}
-.hero-right::before {
-  content: ''; position: absolute; top: -20%; right: -15%;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(184,92,42,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-.eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.8rem; }
-.eyebrow-line { width: 2.5rem; height: 1px; background: var(--accent); }
-.eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; animation: blink 2s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 1.6rem; }
-h1 em { color: var(--accent); font-style: normal; }
-.hero-desc { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.85; max-width: 490px; margin-bottom: 2.8rem; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-
-.btn-dark { background: var(--ink); color: var(--bg); padding: 0.9rem 2.2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; display: inline-block; letter-spacing: 0.04em; transition: background 0.2s, transform 0.2s; }
-.btn-dark:hover { background: var(--accent); transform: translateY(-2px); }
-.btn-ghost { background: transparent; color: var(--ink); padding: 0.9rem 2.2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; display: inline-block; border: 1.5px solid var(--line); letter-spacing: 0.04em; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-.hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.hero-tag { background: var(--accent-light); color: var(--accent); border: 1px solid rgba(184,92,42,0.2); padding: 0.3rem 0.85rem; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em; }
-
-/* RIGHT PANEL */
-.panel-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(184,92,42,0.85); margin-bottom: 1.6rem; }
-.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2.5rem; }
-.stat-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 1.4rem 1.2rem; }
-.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; color: #FAFAF8; line-height: 1; }
-.stat-num sup { font-size: 1.2rem; color: var(--accent); }
-.stat-lbl { font-size: 0.7rem; color: rgba(250,250,248,0.38); margin-top: 0.3rem; line-height: 1.4; }
-.client-pill {
-  display: flex; align-items: center; gap: 0.75rem;
-  background: rgba(30,58,95,0.45); border: 1px solid rgba(74,144,217,0.3);
-  padding: 0.8rem 1.2rem;
-}
-.cpill-dot { width: 7px; height: 7px; border-radius: 50%; background: #4A90D9; flex-shrink: 0; }
-.cpill-text { font-size: 0.78rem; color: rgba(250,250,248,0.75); line-height: 1.4; }
-.cpill-text strong { color: #7BB3E8; display: block; font-size: 0.66rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1px; }
+.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;align-items:stretch;padding-top:72px}
+.hero-left{padding:5rem 4rem 5rem 5vw;display:flex;flex-direction:column;justify-content:center}
+.hero-right{background:linear-gradient(160deg,#1E1C19 0%,#141210 100%);display:flex;flex-direction:column;justify-content:center;padding:5rem 3.5rem;position:relative;overflow:hidden}
+.hero-right::before{content:'';position:absolute;top:-20%;right:-15%;width:500px;height:500px;background:radial-gradient(circle,rgba(184,92,42,0.18) 0%,transparent 70%);pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.8rem}
+.eyebrow-line{width:2.5rem;height:1px;background:var(--accent)}
+.eyebrow-text{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5rem);font-weight:700;line-height:1.05;letter-spacing:-0.03em;color:var(--ink);margin-bottom:1.6rem}
+h1 em{color:var(--accent);font-style:normal}
+.hero-desc{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.85;max-width:490px;margin-bottom:2.8rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-dark{background:var(--ink);color:var(--bg);padding:0.9rem 2.2rem;font-size:0.85rem;font-weight:500;text-decoration:none;display:inline-block;letter-spacing:0.04em;transition:background 0.2s,transform 0.2s}
+.btn-dark:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);padding:0.9rem 2.2rem;font-size:0.85rem;font-weight:500;text-decoration:none;display:inline-block;border:1.5px solid var(--line);letter-spacing:0.04em;transition:border-color 0.2s,color 0.2s,transform 0.2s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+.hero-tag{background:var(--accent-light);color:var(--accent);border:1px solid rgba(184,92,42,0.2);padding:0.3rem 0.85rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.05em}
+.panel-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(184,92,42,0.85);margin-bottom:1.6rem}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:2.5rem}
+.stat-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.2rem}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:#FAFAF8;line-height:1}
+.stat-num sup{font-size:1.2rem;color:var(--accent)}
+.stat-lbl{font-size:0.7rem;color:rgba(250,250,248,0.38);margin-top:0.3rem;line-height:1.4}
+.client-pill{display:flex;align-items:center;gap:0.75rem;background:rgba(30,58,95,0.45);border:1px solid rgba(74,144,217,0.3);padding:0.8rem 1.2rem}
+.cpill-dot{width:7px;height:7px;border-radius:50%;background:#4A90D9;flex-shrink:0}
+.cpill-text{font-size:0.78rem;color:rgba(250,250,248,0.75);line-height:1.4}
+.cpill-text strong{color:#7BB3E8;display:block;font-size:0.66rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1px}
 
 /* SECTIONS */
-section { padding: 7rem 5vw; }
-.sec-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.7rem; }
-.sec-label::before { content: ''; width: 1.5rem; height: 1px; background: var(--accent); }
-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); line-height: 1.15; margin-bottom: 0.8rem; }
-.rule { width: 2.5rem; height: 2px; background: var(--accent); }
+section{padding:7rem 5vw}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.7rem}
+.sec-label::before{content:'';width:1.5rem;height:1px;background:var(--accent)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;letter-spacing:-0.02em;color:var(--ink);line-height:1.15;margin-bottom:0.8rem}
+.rule{width:2.5rem;height:2px;background:var(--accent)}
 
 /* FEATURED */
-.feat-section { background: var(--ink); }
-.feat-section h2 { color: #FAFAF8; }
-.feat-section .sec-label { color: #C87A4A; }
-.feat-section .sec-label::before { background: #C87A4A; }
-.feat-section .rule { background: #C87A4A; }
-
-.client-banner {
-  display: inline-flex; align-items: center; gap: 0.8rem;
-  background: rgba(30,58,95,0.4); border: 1px solid rgba(74,144,217,0.3);
-  padding: 0.65rem 1.3rem; margin-bottom: 3.5rem;
-}
-.client-banner-text { font-size: 0.8rem; color: rgba(250,250,248,0.7); }
-.client-banner-text strong { color: #7BB3E8; font-weight: 600; }
-
-.feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.feat-card { background: #1E1C19; padding: 3rem; position: relative; overflow: hidden; transition: background 0.3s; }
-.feat-card:hover { background: #252320; }
-.feat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-.feat-card:hover::after { transform: scaleX(1); }
-.glow-skin { position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle at 80% 20%, rgba(184,92,42,0.13) 0%, transparent 70%); pointer-events: none; }
-.glow-plant { position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle at 80% 20%, rgba(26,74,58,0.2) 0%, transparent 70%); pointer-events: none; }
-
-.ftag { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'JetBrains Mono', monospace; font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.28rem 0.8rem; margin-bottom: 1.8rem; }
-.ftag-med { background: rgba(184,92,42,0.15); color: #D4845A; border: 1px solid rgba(184,92,42,0.28); }
-.ftag-agr { background: rgba(26,74,58,0.2); color: #5AB88A; border: 1px solid rgba(26,74,58,0.4); }
-
-.feat-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: #FAFAF8; line-height: 1.2; margin-bottom: 0.4rem; }
-.feat-sub { font-size: 0.75rem; color: rgba(250,250,248,0.4); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em; margin-bottom: 1.6rem; }
-.feat-desc { font-size: 0.86rem; color: rgba(250,250,248,0.58); line-height: 1.85; font-weight: 300; margin-bottom: 1.8rem; }
-.feat-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.8rem; }
-.feat-list li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.82rem; color: rgba(250,250,248,0.68); line-height: 1.65; }
-.feat-list li::before { content: '◆'; color: var(--accent); font-size: 0.45rem; margin-top: 0.42rem; flex-shrink: 0; }
-.feat-list li strong { color: rgba(250,250,248,0.88); font-weight: 500; }
-
-.arch { background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.06); padding: 1.1rem 1.4rem; margin-bottom: 1.8rem; }
-.arch-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: rgba(250,250,248,0.28); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.7rem; }
-.arch-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; font-family: 'JetBrains Mono', monospace; font-size: 0.67rem; }
-.anode { background: rgba(255,255,255,0.07); color: rgba(250,250,248,0.72); border: 1px solid rgba(255,255,255,0.1); padding: 0.28rem 0.65rem; }
-.aarrow { color: var(--accent); }
-.feat-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.fp { background: rgba(255,255,255,0.05); color: rgba(250,250,248,0.62); border: 1px solid rgba(255,255,255,0.08); padding: 0.22rem 0.65rem; font-family: 'JetBrains Mono', monospace; font-size: 0.63rem; }
+.feat-section{background:var(--ink)}
+.feat-section h2{color:#FAFAF8}
+.feat-section .sec-label{color:#C87A4A}
+.feat-section .sec-label::before{background:#C87A4A}
+.feat-section .rule{background:#C87A4A}
+.client-banner{display:inline-flex;align-items:center;gap:0.8rem;background:rgba(30,58,95,0.4);border:1px solid rgba(74,144,217,0.3);padding:0.65rem 1.3rem;margin-bottom:3rem}
+.client-banner-text{font-size:0.8rem;color:rgba(250,250,248,0.7)}
+.client-banner-text strong{color:#7BB3E8;font-weight:600}
+.feat-card{background:#1E1C19;padding:3rem;position:relative;overflow:hidden;transition:background 0.3s}
+.feat-card:hover{background:#252320}
+.feat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.feat-card:hover::after{transform:scaleX(1)}
+.glow-skin{position:absolute;top:0;right:0;width:220px;height:220px;background:radial-gradient(circle at 80% 20%,rgba(184,92,42,0.13) 0%,transparent 70%);pointer-events:none}
+.ftag{display:inline-flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.8rem;margin-bottom:1.8rem}
+.ftag-med{background:rgba(184,92,42,0.15);color:#D4845A;border:1px solid rgba(184,92,42,0.28)}
+.feat-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#FAFAF8;line-height:1.2;margin-bottom:0.4rem}
+.feat-sub{font-size:0.75rem;color:rgba(250,250,248,0.4);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;margin-bottom:1.6rem}
+.feat-desc{font-size:0.86rem;color:rgba(250,250,248,0.58);line-height:1.85;font-weight:300;margin-bottom:1.8rem}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1.8rem}
+.feat-list li{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.82rem;color:rgba(250,250,248,0.68);line-height:1.65}
+.feat-list li::before{content:'◆';color:var(--accent);font-size:0.45rem;margin-top:0.42rem;flex-shrink:0}
+.feat-list li strong{color:rgba(250,250,248,0.88);font-weight:500}
+.arch{background:rgba(0,0,0,0.28);border:1px solid rgba(255,255,255,0.06);padding:1.1rem 1.4rem;margin-bottom:1.8rem}
+.arch-lbl{font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:rgba(250,250,248,0.28);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.7rem}
+.arch-flow{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.67rem}
+.anode{background:rgba(255,255,255,0.07);color:rgba(250,250,248,0.72);border:1px solid rgba(255,255,255,0.1);padding:0.28rem 0.65rem}
+.aarrow{color:var(--accent)}
+.feat-pills{display:flex;flex-wrap:wrap;gap:0.4rem}
+.fp{background:rgba(255,255,255,0.05);color:rgba(250,250,248,0.62);border:1px solid rgba(255,255,255,0.08);padding:0.22rem 0.65rem;font-family:'JetBrains Mono',monospace;font-size:0.63rem}
 
 /* OTHER PROJECTS */
-.other-section { background: #F4F1EB; }
-.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.proj-card { background: var(--card); border: 1px solid var(--line); padding: 2rem; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
-.proj-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-.proj-card:hover::before { transform: scaleX(1); }
-.proj-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-color: transparent; }
-.proj-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
-.proj-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
-.proj-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.4rem; font-weight: 300; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.pt { background: var(--accent-light); color: var(--accent); padding: 0.2rem 0.65rem; font-size: 0.63rem; font-family: 'JetBrains Mono', monospace; }
+.other-section{background:#F4F1EB}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj-card{background:var(--card);border:1px solid var(--line);padding:2rem;position:relative;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.proj-card:hover::before{transform:scaleX(1)}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.08);border-color:transparent}
+.proj-icon{font-size:1.8rem;margin-bottom:1.2rem}
+.proj-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem}
+.proj-desc{font-size:0.82rem;color:var(--muted);line-height:1.75;margin-bottom:1.4rem;font-weight:300}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.pt{background:var(--accent-light);color:var(--accent);padding:0.2rem 0.65rem;font-size:0.63rem;font-family:'JetBrains Mono',monospace}
+.proj-bul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.2rem}
+.proj-bul li{font-size:0.8rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.7;font-weight:300}
+.proj-bul li::before{position:absolute;left:0;font-size:0.75rem}
+.proj-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.28rem 0.75rem;margin-bottom:1rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600}
 
 /* SKILLS */
-.skills-section { background: var(--bg); }
-.sk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.sk-card { background: var(--card); border: 1px solid var(--line); padding: 1.8rem; }
-.sk-title { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--line); }
-.sk-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.sp { background: var(--bg); color: var(--ink); border: 1px solid var(--line); padding: 0.26rem 0.72rem; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; transition: border-color 0.2s, color 0.2s; }
-.sp:hover { border-color: var(--accent); color: var(--accent); }
+.skills-section{background:var(--bg)}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.sk-card{background:var(--card);border:1px solid var(--line);padding:1.8rem}
+.sk-title{font-family:'JetBrains Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--line)}
+.sk-pills{display:flex;flex-wrap:wrap;gap:0.4rem}
+.sp{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:0.26rem 0.72rem;font-size:0.72rem;font-family:'JetBrains Mono',monospace;transition:border-color 0.2s,color 0.2s;cursor:default}
+.sp:hover{border-color:var(--accent);color:var(--accent)}
 
 /* EXPERIENCE */
-.exp-section { background: #F4F1EB; }
-.exp-line { position: relative; }
-.exp-line::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: var(--line); }
-.exp-item { padding-left: 3rem; position: relative; margin-bottom: 3.5rem; }
-.exp-item::before { content: ''; position: absolute; left: -5px; top: 4px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
-.exp-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
-.exp-date { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--muted); }
-.exp-badge { font-size: 0.63rem; background: var(--accent-light); color: var(--accent); padding: 0.12rem 0.6rem; font-weight: 500; }
-.exp-role { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
-.exp-co { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-bottom: 1.3rem; }
-.exp-bul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-.exp-bul li { font-size: 0.85rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.75; font-weight: 300; }
-.exp-bul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
-.exp-bul li strong { color: var(--ink); font-weight: 500; }
+.exp-section{background:#F4F1EB}
+.exp-line{position:relative}
+.exp-line::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--line)}
+.exp-item{padding-left:3rem;position:relative;margin-bottom:3.5rem}
+.exp-item::before{content:'';position:absolute;left:-5px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.exp-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem}
+.exp-date{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--muted)}
+.exp-badge{font-size:0.63rem;background:var(--accent-light);color:var(--accent);padding:0.12rem 0.6rem;font-weight:500}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:0.2rem}
+.exp-co{font-size:0.85rem;color:var(--accent);font-weight:500;margin-bottom:1.3rem}
+.exp-bul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.exp-bul li{font-size:0.85rem;color:var(--muted);padding-left:1.2rem;position:relative;line-height:1.75;font-weight:300}
+.exp-bul li::before{content:'→';position:absolute;left:0;color:var(--accent)}
+.exp-bul li strong{color:var(--ink);font-weight:500}
 
-/* ABOUT/CONTACT */
-.contact-section { background: var(--bg); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.ap { color: var(--muted); line-height: 1.9; margin-bottom: 1.2rem; font-size: 0.95rem; font-weight: 300; }
-.ap strong { color: var(--ink); font-weight: 500; }
-.avail { display: inline-flex; align-items: center; gap: 0.5rem; background: #E8F5EF; border: 1px solid #B2D9C4; padding: 0.55rem 1.1rem; margin-top: 1.5rem; font-size: 0.78rem; font-weight: 500; color: #1A6B40; }
-.avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ecc71; animation: blink 2s infinite; }
-.ct-items { display: flex; flex-direction: column; gap: 1rem; }
-.ct-item { display: flex; align-items: center; gap: 1.2rem; padding: 1.1rem 1.3rem; background: var(--card); border: 1px solid var(--line); transition: border-color 0.2s; }
-.ct-item:hover { border-color: var(--accent); }
-.ct-icon { width: 2.2rem; height: 2.2rem; background: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; color: var(--bg); }
-.ct-lbl { font-size: 0.67rem; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 2px; }
-.ct-val { font-size: 0.88rem; font-weight: 500; color: var(--ink); text-decoration: none; }
-.ct-val:hover { color: var(--accent); }
-
-.edu-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-.edu-c { background: var(--card); border: 1px solid var(--line); padding: 1.5rem; border-left: 3px solid var(--accent); }
-.edu-deg { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
-.edu-sch { font-size: 0.78rem; color: var(--accent); font-weight: 500; margin-bottom: 0.2rem; }
-.edu-dt { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; color: var(--muted); }
-.right-label { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+/* ABOUT / CONTACT */
+.contact-section{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.ap{color:var(--muted);line-height:1.9;margin-bottom:1.2rem;font-size:0.95rem;font-weight:300}
+.ap strong{color:var(--ink);font-weight:500}
+.avail{display:inline-flex;align-items:center;gap:0.5rem;background:#E8F5EF;border:1px solid #B2D9C4;padding:0.55rem 1.1rem;margin-top:1.5rem;font-size:0.78rem;font-weight:500;color:#1A6B40}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:#2ecc71;animation:blink 2s infinite}
+.ct-items{display:flex;flex-direction:column;gap:1rem}
+.ct-item{display:flex;align-items:center;gap:1.2rem;padding:1.1rem 1.3rem;background:var(--card);border:1px solid var(--line);transition:border-color 0.2s}
+.ct-item:hover{border-color:var(--accent)}
+.ct-icon{width:2.2rem;height:2.2rem;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;color:var(--bg)}
+.ct-lbl{font-size:0.67rem;color:var(--muted);letter-spacing:0.05em;margin-bottom:2px}
+.ct-val{font-size:0.88rem;font-weight:500;color:var(--ink);text-decoration:none}
+.ct-val:hover{color:var(--accent)}
+.edu-mini{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+.edu-c{background:var(--card);border:1px solid var(--line);padding:1.5rem;border-left:3px solid var(--accent)}
+.edu-deg{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem}
+.edu-sch{font-size:0.78rem;color:var(--accent);font-weight:500;margin-bottom:0.2rem}
+.edu-dt{font-family:'JetBrains Mono',monospace;font-size:0.64rem;color:var(--muted)}
+.right-label{font-family:'JetBrains Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
 
 /* FOOTER */
-footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
-.ft-top { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
-.ft-name { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; }
-.ft-tag { font-size: 0.8rem; color: rgba(250,250,248,0.38); margin-top: 0.3rem; }
-.ft-cta { background: var(--accent); color: var(--bg); padding: 0.9rem 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; display: inline-block; letter-spacing: 0.04em; transition: opacity 0.2s; white-space: nowrap; }
-.ft-cta:hover { opacity: 0.85; }
-.ft-bot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.ft-copy { font-size: 0.73rem; color: rgba(250,250,248,0.28); }
-.ft-links { display: flex; gap: 1.5rem; }
-.ft-links a { font-size: 0.73rem; color: rgba(250,250,248,0.38); text-decoration: none; transition: color 0.2s; }
-.ft-links a:hover { color: var(--accent); }
+footer{background:var(--ink);color:var(--bg);padding:4rem 5vw 2.5rem}
+.ft-top{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:start;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:2rem}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700}
+.ft-tag{font-size:0.8rem;color:rgba(250,250,248,0.38);margin-top:0.3rem}
+.ft-cta{background:var(--accent);color:var(--bg);padding:0.9rem 2rem;font-size:0.85rem;font-weight:500;text-decoration:none;display:inline-block;letter-spacing:0.04em;transition:opacity 0.2s;white-space:nowrap}
+.ft-cta:hover{opacity:0.85}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.ft-copy{font-size:0.73rem;color:rgba(250,250,248,0.28)}
+.ft-links{display:flex;gap:1.5rem}
+.ft-links a{font-size:0.73rem;color:rgba(250,250,248,0.38);text-decoration:none;transition:color 0.2s}
+.ft-links a:hover{color:var(--accent)}
 
 /* ANIMATIONS */
-.fade-up { opacity: 0; transform: translateY(26px); transition: opacity 0.72s ease, transform 0.72s ease; }
-.fade-up.in { opacity: 1; transform: translateY(0); }
+.fade-up{opacity:0;transform:translateY(26px);transition:opacity 0.72s ease,transform 0.72s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 4rem 5vw 3rem; }
-  .hero-right { padding: 3rem 5vw; }
-  .feat-grid, .about-grid, .edu-mini { grid-template-columns: 1fr; }
-  .proj-grid, .sk-grid { grid-template-columns: 1fr 1fr; }
-  .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
-  .ft-top { grid-template-columns: 1fr; }
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:4rem 5vw 3rem}
+  .hero-right{padding:3rem 5vw}
+  .about-grid,.edu-mini{grid-template-columns:1fr}
+  .proj-grid,.sk-grid{grid-template-columns:1fr 1fr}
+  .ft-top{grid-template-columns:1fr}
+  .nav-links li:not(:last-child):not(:nth-last-child(2)){display:none}
 }
-@media (max-width: 600px) {
-  .proj-grid, .sk-grid, .stat-grid { grid-template-columns: 1fr; }
-  h1 { font-size: 2.8rem; }
+@media(max-width:600px){
+  .proj-grid,.sk-grid,.stat-grid{grid-template-columns:1fr}
+  h1{font-size:2.8rem}
 }
 </style>
 </head>
@@ -260,9 +214,7 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
       <span class="live-dot" title="Open to remote work"></span>
     </div>
     <h1>Building AI That<br><em>Ships to</em><br>Production.</h1>
-    <p class="hero-desc">
-      ML Engineer specializing in Computer Vision, NLP, and full-stack AI delivery — from custom model training to FastAPI deployment and Flutter mobile integration. I've shipped real products for real clients.
-    </p>
+    <p class="hero-desc">ML Engineer specializing in Computer Vision, NLP, and full-stack AI delivery — from custom model training to FastAPI deployment and Flutter mobile integration. I've shipped real products for real clients.</p>
     <div class="hero-actions">
       <a href="mailto:Khizerr776@gmail.com" class="btn-dark">Get In Touch ↗</a>
       <a href="#featured" class="btn-ghost">View Projects →</a>
@@ -276,7 +228,6 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
       <span class="hero-tag">MLflow · Airflow</span>
     </div>
   </div>
-
   <div class="hero-right">
     <div class="panel-label">Delivery Metrics</div>
     <div class="stat-grid">
@@ -308,50 +259,42 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
   </div>
 </div>
 
-<!-- FEATURED PROJECTS -->
+<!-- FEATURED: PRIME MEDIC -->
 <section id="featured" class="feat-section">
   <div class="sec-label fade-up">Featured Client Work</div>
   <h2 class="fade-up">Prime Medic Group, Australia</h2>
   <div class="rule fade-up" style="margin-bottom:1.8rem;"></div>
   <div class="client-banner fade-up">
     <span style="font-size:1.1rem;">🇦🇺</span>
-    <span class="client-banner-text">International Client — <strong>Prime Medic Group · Australia</strong> &nbsp;·&nbsp; AI-Powered Medical Imaging delivered end-to-end</span>
+    <span class="client-banner-text">International Client — <strong>Prime Medic Group · Australia</strong> · AI-Powered Medical Imaging delivered end-to-end</span>
   </div>
-
-  <div class="feat-grid" style="grid-template-columns:1fr;">
-    <!-- SKIN CANCER -->
-    <div class="feat-card fade-up">
-      <div class="glow-skin"></div>
-      <div class="ftag ftag-med">🏥 Healthcare AI · Medical Imaging</div>
-      <div class="feat-title">Skin Cancer Detection App</div>
-      <div class="feat-sub">Custom CNN · FastAPI · Flutter · Docker</div>
-      <p class="feat-desc">
-        A production-ready AI application built for Prime Medic Group (Australia) that classifies skin cancer types from dermoscopic images using a custom-trained Convolutional Neural Network. Integrated with a Flutter mobile app for real-world clinical use.
-      </p>
-      <ul class="feat-list">
-        <li>Trained a <strong>custom CNN model from scratch</strong> on dermoscopic datasets to classify multiple skin lesion types with clinical-grade precision</li>
-        <li>Built a <strong>FastAPI REST backend</strong> — accepts image uploads, runs inference, and returns prediction + confidence score in real time</li>
-        <li>Developed the <strong>Flutter mobile app</strong> (iOS &amp; Android) with camera capture, image upload, and instant AI diagnosis display</li>
-        <li>Built a complete <strong>image preprocessing pipeline</strong> using OpenCV for normalization, augmentation, and resizing</li>
-        <li>Containerized with <strong>Docker</strong> and deployed on cloud for production uptime and scalability</li>
-      </ul>
-      <div class="arch">
-        <div class="arch-lbl">System Architecture</div>
-        <div class="arch-flow">
-          <span class="anode">Flutter App</span>
-          <span class="aarrow">→</span>
-          <span class="anode">FastAPI</span>
-          <span class="aarrow">→</span>
-          <span class="anode">Custom CNN</span>
-          <span class="aarrow">→</span>
-          <span class="anode">Prediction + Confidence</span>
-        </div>
-      </div>
-      <div class="feat-pills">
-        <span class="fp">Python</span><span class="fp">PyTorch</span><span class="fp">CNN</span><span class="fp">OpenCV</span><span class="fp">FastAPI</span><span class="fp">Flutter</span><span class="fp">Docker</span><span class="fp">REST API</span><span class="fp">Medical Imaging</span>
+  <div class="feat-card fade-up">
+    <div class="glow-skin"></div>
+    <div class="ftag ftag-med">🏥 Healthcare AI · Medical Imaging</div>
+    <div class="feat-title">Skin Cancer Detection App</div>
+    <div class="feat-sub">Custom CNN · FastAPI · Flutter · Docker</div>
+    <p class="feat-desc">A production-ready AI application built for Prime Medic Group (Australia) that classifies skin cancer types from dermoscopic images using a custom-trained Convolutional Neural Network. Integrated with a Flutter mobile app for real-world clinical use.</p>
+    <ul class="feat-list">
+      <li>Trained a <strong>custom CNN model from scratch</strong> on dermoscopic datasets to classify multiple skin lesion types with clinical-grade precision</li>
+      <li>Built a <strong>FastAPI REST backend</strong> — accepts image uploads, runs inference, and returns prediction + confidence score in real time</li>
+      <li>Developed the <strong>Flutter mobile app</strong> (iOS &amp; Android) with camera capture, image upload, and instant AI diagnosis display</li>
+      <li>Built a complete <strong>image preprocessing pipeline</strong> using OpenCV for normalization, augmentation, and resizing</li>
+      <li>Containerized with <strong>Docker</strong> and deployed on cloud for production uptime and scalability</li>
+    </ul>
+    <div class="arch">
+      <div class="arch-lbl">System Architecture</div>
+      <div class="arch-flow">
+        <span class="anode">Flutter App</span>
+        <span class="aarrow">→</span>
+        <span class="anode">FastAPI</span>
+        <span class="aarrow">→</span>
+        <span class="anode">Custom CNN</span>
+        <span class="aarrow">→</span>
+        <span class="anode">Prediction + Confidence</span>
       </div>
     </div>
-
+    <div class="feat-pills">
+      <span class="fp">Python</span><span class="fp">PyTorch</span><span class="fp">CNN</span><span class="fp">OpenCV</span><span class="fp">FastAPI</span><span class="fp">Flutter</span><span class="fp">Docker</span><span class="fp">REST API</span><span class="fp">Medical Imaging</span>
     </div>
   </div>
 </section>
@@ -363,67 +306,120 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
   <div class="rule fade-up" style="margin-bottom:3rem;"></div>
   <div class="proj-grid">
 
-    <!-- FINAL YEAR PROJECT - spans full width -->
-    <div class="proj-card fade-up" style="grid-column: 1 / -1; border-left: 4px solid #1A6B40; display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;">
+    <!-- FYP: PLANT DETECTOR — full width -->
+    <div class="proj-card fade-up" style="grid-column:1/-1;border-left:4px solid #1A6B40;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
       <div>
-        <div style="display:inline-flex;align-items:center;gap:0.5rem;background:#E8F5EF;border:1px solid #B2D9C4;padding:0.28rem 0.75rem;margin-bottom:1rem;">
-          <span style="width:6px;height:6px;border-radius:50%;background:#2ecc71;display:inline-block;"></span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:#1A6B40;font-weight:600;">🎓 Final Year Project · UAF</span>
+        <div class="proj-badge" style="background:#E8F5EF;border:1px solid #B2D9C4;color:#1A6B40;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#2ecc71;display:inline-block;flex-shrink:0;"></span>
+          🎓 Final Year Project · UAF
         </div>
         <div class="proj-icon">🌿</div>
         <div class="proj-title">Plant Type &amp; Disease Stage Detector</div>
-        <div class="proj-desc">An AI-powered agricultural application built as my BS Software Engineering Final Year Project at University of Agriculture Faisalabad. Detects plant species and diagnoses disease stages from leaf images using a custom-trained deep learning model, with a Flutter mobile frontend and FastAPI backend.</div>
+        <p class="proj-desc">AI-powered agricultural app (BS Final Year Project at UAF) that identifies plant species and diagnoses disease stages from leaf images using a custom-trained deep learning model, with a Flutter mobile frontend and FastAPI backend.</p>
         <div class="proj-tags">
-          <span class="pt">Python</span><span class="pt">TensorFlow</span><span class="pt">Transfer Learning</span><span class="pt">OpenCV</span><span class="pt">FastAPI</span><span class="pt">Flutter</span><span class="pt">Docker</span><span class="pt">Multi-class Classification</span>
+          <span class="pt">Python</span><span class="pt">TensorFlow</span><span class="pt">Transfer Learning</span><span class="pt">OpenCV</span><span class="pt">FastAPI</span><span class="pt">Flutter</span><span class="pt">Docker</span>
         </div>
       </div>
       <div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-top:2.5rem;">
-          <li style="font-size:0.83rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.7;font-weight:300;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Trained a <strong style="color:var(--ink);font-weight:500;">custom deep learning model</strong> to simultaneously identify plant type and diagnose disease stage from a single leaf photograph</li>
-          <li style="font-size:0.83rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.7;font-weight:300;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Built <strong style="color:var(--ink);font-weight:500;">multi-output prediction</strong> returning plant type, disease name, severity stage, and treatment guidance in one API call</li>
-          <li style="font-size:0.83rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.7;font-weight:300;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Developed <strong style="color:var(--ink);font-weight:500;">FastAPI REST endpoints</strong> optimized for low-latency mobile inference with async image handling</li>
-          <li style="font-size:0.83rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.7;font-weight:300;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Delivered a complete <strong style="color:var(--ink);font-weight:500;">Flutter mobile app</strong> with live camera integration and results display</li>
-          <li style="font-size:0.83rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.7;font-weight:300;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Applied <strong style="color:var(--ink);font-weight:500;">transfer learning &amp; fine-tuning</strong> on custom agricultural datasets to maximize accuracy</li>
+        <ul class="proj-bul" style="margin-top:2.5rem;">
+          <li style="padding-left:1.1rem;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Trained a <strong style="color:var(--ink);font-weight:500;">custom deep learning model</strong> to simultaneously identify plant type and diagnose disease stage from a single leaf photo</li>
+          <li style="padding-left:1.1rem;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Built <strong style="color:var(--ink);font-weight:500;">multi-output prediction</strong> returning plant type, disease name, severity stage, and treatment guidance in one API call</li>
+          <li style="padding-left:1.1rem;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Developed <strong style="color:var(--ink);font-weight:500;">FastAPI REST endpoints</strong> optimized for low-latency mobile inference with async image handling</li>
+          <li style="padding-left:1.1rem;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Delivered a complete <strong style="color:var(--ink);font-weight:500;">Flutter mobile app</strong> with live camera integration and results display</li>
+          <li style="padding-left:1.1rem;"><span style="position:absolute;left:0;color:#1A6B40;">→</span>Applied <strong style="color:var(--ink);font-weight:500;">transfer learning &amp; fine-tuning</strong> on custom agricultural datasets to maximize accuracy</li>
         </ul>
       </div>
     </div>
 
-    <div class="proj-card fade-up">
+    <!-- HEALTHCARE DATA PIPELINE -->
+    <div class="proj-card fade-up" style="border-left:4px solid #1E3A5F;">
+      <div class="proj-badge" style="background:#EAF0F8;border:1px solid #B0C4DE;color:#1E3A5F;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#4A90D9;display:inline-block;flex-shrink:0;"></span>
+        🇦🇺 Healthcare Client · Australia
+      </div>
+      <div class="proj-icon">🏥</div>
+      <div class="proj-title">Healthcare Data Collection Pipeline</div>
+      <p class="proj-desc">Authorized data collection and structuring pipeline for an Australian medical center. Custom Python scripts gather, clean, and export structured CSV datasets used by the medical team for operational reporting and patient management.</p>
+      <ul class="proj-bul">
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#1E3A5F;">→</span>Custom scripts targeting <strong style="color:var(--ink);font-weight:500;">authorized public data sources</strong> relevant to the medical center's operations</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#1E3A5F;">→</span><strong style="color:var(--ink);font-weight:500;">Data cleaning &amp; normalization pipeline</strong> — deduplication, missing field handling, schema standardization</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#1E3A5F;">→</span>Exported <strong style="color:var(--ink);font-weight:500;">structured CSV datasets</strong> used for reporting, scheduling, and operational planning</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#1E3A5F;">→</span><strong style="color:var(--ink);font-weight:500;">Scheduled automation</strong> so the team always had fresh data without manual effort</li>
+      </ul>
+      <div class="proj-tags">
+        <span class="pt">Python</span><span class="pt">BeautifulSoup</span><span class="pt">Requests</span><span class="pt">Pandas</span><span class="pt">ETL</span><span class="pt">CSV Export</span><span class="pt">Automation</span>
+      </div>
+    </div>
+
+    <!-- WEB TEST AUTOMATION -->
+    <div class="proj-card fade-up" style="transition-delay:0.07s;border-left:4px solid #5A3E8A;">
+      <div class="proj-badge" style="background:#F2EEF9;border:1px solid #C9B8E8;color:#5A3E8A;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#7B5EA7;display:inline-block;flex-shrink:0;"></span>
+        ⚙️ QA Automation · Client Project
+      </div>
+      <div class="proj-icon">🧪</div>
+      <div class="proj-title">Web App Test Automation Suite</div>
+      <p class="proj-desc">End-to-end Selenium test automation framework for a client's web application. Automated critical user journeys — login, signup, and booking flows — enabling regression testing on every deployment.</p>
+      <ul class="proj-bul">
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#5A3E8A;">→</span>Automated complete <strong style="color:var(--ink);font-weight:500;">login &amp; signup flows</strong> including validation, error states, and session handling</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#5A3E8A;">→</span>Built <strong style="color:var(--ink);font-weight:500;">booking process automation</strong> — slot selection, form submission, confirmation, and edge cases</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#5A3E8A;">→</span>Structured using <strong style="color:var(--ink);font-weight:500;">Page Object Model (POM)</strong> for clean, maintainable, scalable test code</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#5A3E8A;">→</span>Integrated with <strong style="color:var(--ink);font-weight:500;">CI pipeline</strong> — tests run automatically on every deployment</li>
+        <li style="padding-left:1rem;"><span style="position:absolute;left:0;color:#5A3E8A;">→</span>Generated <strong style="color:var(--ink);font-weight:500;">HTML test reports</strong> with full pass/fail visibility across all critical flows</li>
+      </ul>
+      <div class="proj-tags">
+        <span class="pt">Python</span><span class="pt">Selenium</span><span class="pt">pytest</span><span class="pt">Page Object Model</span><span class="pt">CI Integration</span><span class="pt">HTML Reports</span>
+      </div>
+    </div>
+
+    <!-- CHURN PREDICTION -->
+    <div class="proj-card fade-up" style="transition-delay:0.14s;">
       <div class="proj-icon">📉</div>
       <div class="proj-title">Customer Churn Prediction</div>
-      <div class="proj-desc">End-to-end ML pipeline for telecom churn with automated retraining, model versioning via MLflow, and real-time FastAPI serving on AWS EC2.</div>
+      <p class="proj-desc">End-to-end ML pipeline for telecom churn with automated retraining, model versioning via MLflow, and real-time FastAPI serving on AWS EC2.</p>
       <div class="proj-tags"><span class="pt">XGBoost</span><span class="pt">FastAPI</span><span class="pt">MLflow</span><span class="pt">AWS EC2</span></div>
     </div>
-    <div class="proj-card fade-up" style="transition-delay:0.07s">
+
+    <!-- CV QUALITY -->
+    <div class="proj-card fade-up">
       <div class="proj-icon">🔍</div>
       <div class="proj-title">CV Quality Inspector</div>
-      <div class="proj-desc">YOLO-based real-time object detection for automated manufacturing quality inspection, containerized with Docker and served via FastAPI microservice.</div>
+      <p class="proj-desc">YOLO-based real-time object detection for automated manufacturing quality inspection, containerized with Docker and served via FastAPI microservice.</p>
       <div class="proj-tags"><span class="pt">YOLO</span><span class="pt">PyTorch</span><span class="pt">OpenCV</span><span class="pt">Docker</span></div>
     </div>
-    <div class="proj-card fade-up" style="transition-delay:0.14s">
+
+    <!-- NLP -->
+    <div class="proj-card fade-up" style="transition-delay:0.07s;">
       <div class="proj-icon">💬</div>
       <div class="proj-title">NLP Sentiment Pipeline</div>
-      <div class="proj-desc">Production NLP system with fine-tuned BERT/RoBERTa for multi-domain sentiment analysis and named entity recognition, served via REST API.</div>
+      <p class="proj-desc">Production NLP system with fine-tuned BERT/RoBERTa for multi-domain sentiment analysis and named entity recognition, served via REST API.</p>
       <div class="proj-tags"><span class="pt">BERT</span><span class="pt">RoBERTa</span><span class="pt">HuggingFace</span><span class="pt">Flask</span></div>
     </div>
-    <div class="proj-card fade-up">
+
+    <!-- E-COMMERCE SCRAPING -->
+    <div class="proj-card fade-up" style="transition-delay:0.14s;">
       <div class="proj-icon">🕷️</div>
       <div class="proj-title">E-Commerce Scraping Pipeline</div>
-      <div class="proj-desc">Scalable multi-platform scraping system with ETL into AWS Redshift — delivered 45% faster data access for analytics and business reporting.</div>
+      <p class="proj-desc">Scalable multi-platform scraping system with ETL into AWS Redshift — delivered 45% faster data access for analytics and business reporting.</p>
       <div class="proj-tags"><span class="pt">Scrapy</span><span class="pt">Selenium</span><span class="pt">AWS S3</span><span class="pt">Redshift</span></div>
     </div>
-    <div class="proj-card fade-up" style="transition-delay:0.07s">
+
+    <!-- POWER BI -->
+    <div class="proj-card fade-up">
       <div class="proj-icon">📊</div>
       <div class="proj-title">AI-Integrated Power BI Dashboards</div>
-      <div class="proj-desc">Dynamic reporting suite integrating live ML model outputs with business KPIs — improved decision speed by 30% for non-technical stakeholders.</div>
+      <p class="proj-desc">Dynamic reporting suite integrating live ML model outputs with business KPIs — improved decision speed by 30% for non-technical stakeholders.</p>
       <div class="proj-tags"><span class="pt">Power BI</span><span class="pt">Streamlit</span><span class="pt">Plotly</span><span class="pt">SQL</span></div>
     </div>
-    <div class="proj-card fade-up" style="transition-delay:0.14s">
+
+    <!-- MLOPS -->
+    <div class="proj-card fade-up" style="transition-delay:0.07s;">
       <div class="proj-icon">🛰️</div>
       <div class="proj-title">MLOps Monitoring System</div>
-      <div class="proj-desc">Concept drift detection with automated Slack alerts and Grafana dashboards for real-time production ML health monitoring and retraining triggers.</div>
+      <p class="proj-desc">Concept drift detection with automated Slack alerts and Grafana dashboards for real-time production ML health monitoring and retraining triggers.</p>
       <div class="proj-tags"><span class="pt">MLflow</span><span class="pt">Grafana</span><span class="pt">Airflow</span><span class="pt">Slack API</span></div>
     </div>
+
   </div>
 </section>
 
@@ -439,13 +435,13 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
         <span class="sp">Machine Learning</span><span class="sp">Deep Learning</span><span class="sp">CNNs / RNNs / LSTMs</span><span class="sp">LLM Fine-tuning</span><span class="sp">Computer Vision</span><span class="sp">NLP</span><span class="sp">AutoML</span>
       </div>
     </div>
-    <div class="sk-card fade-up" style="transition-delay:0.05s">
+    <div class="sk-card fade-up" style="transition-delay:0.05s;">
       <div class="sk-title">Frameworks & Libraries</div>
       <div class="sk-pills">
         <span class="sp">PyTorch</span><span class="sp">TensorFlow</span><span class="sp">Keras</span><span class="sp">scikit-learn</span><span class="sp">HuggingFace</span><span class="sp">XGBoost</span><span class="sp">LightGBM</span><span class="sp">OpenCV</span>
       </div>
     </div>
-    <div class="sk-card fade-up" style="transition-delay:0.1s">
+    <div class="sk-card fade-up" style="transition-delay:0.1s;">
       <div class="sk-title">API & Mobile Development</div>
       <div class="sk-pills">
         <span class="sp">FastAPI</span><span class="sp">Flask</span><span class="sp">Flutter</span><span class="sp">REST APIs</span><span class="sp">Streamlit</span><span class="sp">Mobile Integration</span>
@@ -457,16 +453,16 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
         <span class="sp">MLflow</span><span class="sp">Airflow</span><span class="sp">Docker</span><span class="sp">Kubernetes</span><span class="sp">Grafana</span><span class="sp">Drift Detection</span>
       </div>
     </div>
-    <div class="sk-card fade-up" style="transition-delay:0.05s">
+    <div class="sk-card fade-up" style="transition-delay:0.05s;">
       <div class="sk-title">Cloud & CI/CD</div>
       <div class="sk-pills">
         <span class="sp">AWS S3 / EC2 / SageMaker</span><span class="sp">Azure ML</span><span class="sp">GCP BigQuery</span><span class="sp">GitHub Actions</span><span class="sp">GitLab CI/CD</span><span class="sp">Jenkins</span>
       </div>
     </div>
-    <div class="sk-card fade-up" style="transition-delay:0.1s">
-      <div class="sk-title">Data & Visualization</div>
+    <div class="sk-card fade-up" style="transition-delay:0.1s;">
+      <div class="sk-title">Data, Scraping & QA</div>
       <div class="sk-pills">
-        <span class="sp">ETL Pipelines</span><span class="sp">AWS Redshift</span><span class="sp">Pandas / NumPy</span><span class="sp">Power BI</span><span class="sp">Tableau</span><span class="sp">Plotly</span><span class="sp">SQL / R</span>
+        <span class="sp">ETL Pipelines</span><span class="sp">AWS Redshift</span><span class="sp">Pandas / NumPy</span><span class="sp">Power BI</span><span class="sp">Tableau</span><span class="sp">Plotly</span><span class="sp">SQL</span><span class="sp">Selenium</span><span class="sp">Scrapy</span><span class="sp">BeautifulSoup</span><span class="sp">pytest</span><span class="sp">QA Automation</span>
       </div>
     </div>
   </div>
@@ -487,13 +483,15 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
       <div class="exp-co">IT Virtual House · Sahiwal, Pakistan</div>
       <ul class="exp-bul">
         <li>Designed and deployed ML models for classification, regression, churn prediction, segmentation, and recommendations — achieving <strong>up to 92% accuracy</strong>.</li>
-        <li>Built AI medical imaging app for <strong>Prime Medic Group (Australia)</strong> — skin cancer detection system using a custom CNN model with FastAPI backend and Flutter mobile integration.</li>
-        <li>Developed <strong>Plant Type &amp; Disease Stage Detector</strong> as Final Year Project (UAF) — custom ML model with FastAPI API and Flutter mobile app for agricultural disease diagnosis.</li>
+        <li>Built AI medical imaging app for <strong>Prime Medic Group (Australia)</strong> — skin cancer detection using a custom CNN model with FastAPI backend and Flutter mobile integration.</li>
+        <li>Developed <strong>Plant Type &amp; Disease Stage Detector</strong> as Final Year Project (UAF) — custom ML model with FastAPI and Flutter mobile app for agricultural disease diagnosis.</li>
         <li>Developed <strong>FastAPI REST APIs</strong> for all ML model deployments, optimized for real-time inference and mobile integration.</li>
         <li>Built <strong>Flutter mobile applications</strong> (iOS &amp; Android) integrated with FastAPI ML backends for end-to-end AI product delivery.</li>
         <li>Deployed Computer Vision models (YOLO, CNNs) for object detection and quality inspection pipelines.</li>
         <li>Built production NLP pipelines (BERT, RoBERTa) for sentiment analysis and entity recognition.</li>
         <li>Designed ETL pipelines integrating AWS S3 and Redshift — <strong>45% faster data access</strong>.</li>
+        <li>Built authorized <strong>healthcare data collection pipeline</strong> for an Australian medical center — structured CSV exports for operational reporting and patient management.</li>
+        <li>Developed a <strong>Selenium test automation suite</strong> for a client web app — automated login, signup, and booking flows using Page Object Model with CI integration.</li>
         <li>Built AutoML pipelines with MLflow and GitHub Actions — <strong>50% reduction in manual retraining effort</strong>.</li>
         <li>Led Power BI dashboard development with AI-integrated KPIs — <strong>30% faster business decisions</strong>.</li>
         <li>Implemented model drift detection with Slack alerts and Grafana dashboards for production monitoring.</li>
@@ -514,7 +512,7 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
       <p class="ap">I'm actively seeking <strong>remote opportunities with US and international companies</strong> where I can contribute to high-impact AI products. Available to work US business hours.</p>
       <div class="avail"><span class="avail-dot"></span> Open to Remote Work · US Time Zone Available</div>
     </div>
-    <div class="fade-up" style="transition-delay:0.15s">
+    <div class="fade-up" style="transition-delay:0.15s;">
       <div class="right-label">Education</div>
       <div class="edu-mini">
         <div class="edu-c">
@@ -561,20 +559,31 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 5vw 2.5rem; }
     <div class="ft-links">
       <a href="mailto:Khizerr776@gmail.com">Email</a>
       <a href="tel:+923016927884">Phone</a>
-      <a href="https://www.linkedin.com/in/khizer-rehman-891264246/">LinkedIn</a>
-      <a href="https://github.com/khizer776">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
     </div>
   </div>
 </footer>
 
 <script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-  setTimeout(() => {
-    document.querySelectorAll('.hero .fade-up, .hero-left *, .hero-right *').forEach(el => el.classList.add('in'));
-  }, 150);
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Trigger hero elements immediately on load
+  window.addEventListener('load', function() {
+    document.querySelectorAll('.hero-left *, .hero-right *').forEach(function(el) {
+      if (el.classList.contains('fade-up')) el.classList.add('in');
+    });
+  });
 </script>
 </body>
 </html>
